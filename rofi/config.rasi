@@ -1,0 +1,4 @@
+configuration {
+	modi: "drun,run";
+}
+@import "/usr/share/rofi/themes/Monokai.rasi"
