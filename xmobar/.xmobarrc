@@ -1,4 +1,4 @@
-Config { font = "xft:Noto Sans Mono:pixelsize=15:antialias=true:hinting=true, Font Awesome 5 Free Solid:style=Solid:size=11:antialias=true:hinting=true"
+Config { font = "xft:Roboto Mono:style=Bold:pixelsize=15:antialias=true:hinting=true, Font Awesome 5 Free Solid:style=Solid:size=11:antialias=true:hinting=true"
        , additionalFonts = []
        , borderColor = "darkorange"
        , border = FullB
@@ -20,8 +20,8 @@ Config { font = "xft:Noto Sans Mono:pixelsize=15:antialias=true:hinting=true, Fo
                                           "--low","lightblue"] 18000
                     , Run Wireless "" ["-t","<ssid>: <quality>","-L","50","-H","80",
                                           "--low", "red", "--normal", "yellow", "--high", "green"] 600
-                    , Run MultiCpu ["-t", " <total>%", "-L","3","-H","50",
-                               "--low","green", "--normal", "yellow","--high","red"] 10
+                    -- Run MultiCpu ["-t", " <total>%", "-L","3","-H","50",
+                    --           "--low","green", "--normal", "yellow","--high","red"] 10
 					, Run Volume "default" "Master" ["-t", " <volume>% <status>", "--", "--on", "[on]"] 3
                     , Run Date "%-m/%d/%Y" "date" 600
 					, Run Date "%I:%M:%S %p" "date2" 10
@@ -39,10 +39,10 @@ Config { font = "xft:Noto Sans Mono:pixelsize=15:antialias=true:hinting=true, Fo
                                        -- charged status
                                        , "-i"	, " <left>%" -- FA "battery-full"
                              ] 600
-                     , Run UnsafeStdinReader
+                     , Run StdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "[%UnsafeStdinReader%] [%multicpu%] [%wi%]}\
+       , template = "[%StdinReader%] [%wi%]}\
                    \{ [<fc=#82b2ff>%date%</fc> - <fc=#82b2ff>%date2%</fc>] [%KPIT%] [%battery%] [%default:Master%]"
        }
