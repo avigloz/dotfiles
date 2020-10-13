@@ -25,9 +25,9 @@ set visualbell
 " sacreligious butchery of tabs
 set expandtab
 set smarttab
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+set shiftwidth=3
+set tabstop=3
+set softtabstop=3
 
 " formatting
 set nowrap
@@ -59,10 +59,18 @@ filetype indent on
 set autoread
 au FocusGained,BufEnter * checktime
 
+
+"
+" keymaps
+"
 let mapleader = "." " leader
 
-" keymaps
-nmap <leader>s :w!<CR>
+" personal
+nmap <leader>e :w!<CR>
+nmap <leader>q :q!<CR>
+nmap <leader>qe :wq!<CR>
+imap ee <ESC> 
+
+" plugin
 nmap <C-n> :NERDTreeToggle<CR>
-inoremap cv <ESC> 
 
