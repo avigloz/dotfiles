@@ -1,0 +1,16 @@
+background "#000000"
+
+decorations none
+icon_size 20
+geometry 4x1-1920+0
+max_geometry 4x1+1920+0
+
+kludges use_icons_hints
+kludges force_icons_size
+
+window_type dock
+skip_taskbar true
+sticky true
+
+grow_gravity NE
+icon_gravity NE

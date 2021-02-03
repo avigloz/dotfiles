@@ -1,0 +1,49 @@
+()
+
+deadlock
+	two or more processes are waiting indefinitely for an event that 
+	can be caused by only one of the waiting processes
+starvation
+	indefinite blocking
+		a process may never be removed from the semaphore queue in which it is suspended
+
+semaphores
+	counting semaphore
+		can be made using a binary semaphore, and a counter that increments/decrements based on the binary semaphore
+	binary semaphore
+		OS only has these
+
+Readers-Writers problem:
+	Readers: only read the data-set, no updates
+	Writers: can both read/write
+
+	Problem:
+		only single writer can access the shared data at a time
+		readers can read at any time (reader's priority)
+
+Dining-Philosophers Problem
+	resourcse shared between two processes
+	processes want to protect resources
+
+	chopsticks[5]
+		every chopstick initialized to 1 (free)
+	deadlock:
+		philosopher takes one chopstick,
+			gets preempted, etc.
+				repeated until everyone only has one chopsticks
+				philsopher resumes can't grab chopstick, waits for it to be put down,
+				etc. etc. deadlock!
+		handling:
+			with 5 chopsticks, allow at most 4 philosophers at the table (changing the problem)
+			use semaphores to represent pairs of chopsticks (i.e allow picking up if only both are avail)
+				block 1-2 if someone takes 5-1
+			asymmetric solution (complicated)
+
+	deadlock doesn't necessarily happen, depends on preemptions
+
+Problems with semaphores:
+	signal(mutex) ... wait(mutex)
+	wait(mutex) ... wait(mutex)
+	omission of wait IOR signal
+
+	deadlock + starvation are possible

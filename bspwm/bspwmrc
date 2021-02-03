@@ -1,27 +1,38 @@
-#! /bin/sh
+#! /bin/bash
 
 killall redshift
-killall polybar
+killall lemonbar
+killall spotifyd
+#killall polybar
 
 sxhkd &
-picom -m 1 &
+#pgrep -x sxhkd > /dev/null || sxhkd &
+# picom &
 nitrogen --restore &
-polybar main &
-redshift -t 6500:3000 &
+redshift &
+spotifyd --bitrate 320 --on-song-change-hook "bash $HOME/.config/bspwm/spotify.sh" &
 
-pgrep -x sxhkd > /dev/null || sxhkd &
+bash $HOME/.config/bspwm/mouse.sh
+xbindkeys
+xsetroot -cursor_name left_ptr
+wmname LG3D
 
-bspc monitor -d I II III IV V VI
+bspc monitor HDMI-0 -d I II
+bspc monitor HDMI-1 -d III IV
+bash $HOME/bar.sh | lemonbar -f "UW Ttyp0"-12 -g 1840x20 -O HDMI-0 &
+bash $HOME/bar.sh | lemonbar -f "UW Ttyp0"-12 -g 1920x20 -O HDMI-1 &
+stalonetray &
 
-bspc config border_width         2
-bspc config window_gap          6.
+
+bspc config border_width         1
+bspc config window_gap           2
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
+#bspc rule -a Gimp desktop='^8' state=floating follow=on
+#bspc rule -a Chromium desktop='^2'
+#bspc rule -a mplayer2 state=floating
+#bspc rule -a Screenkey manage=off
+xss-lock --transfer-sleep-lock -- i3lock --c 000000 --nofork

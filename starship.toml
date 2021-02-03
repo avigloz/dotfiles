@@ -1,0 +1,33 @@
+add_newline = false
+#format = "$username$hostname[:](bold red) $directory\n$character"
+format = "$character"
+
+[line-break]
+disabled = true
+
+[username]
+style = "bold white"
+format = "[$username]($style)@"
+
+# Don't print a new line at the start of the promptadd_newline = false
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[>](blue)"
+error_symbol = "[>](red)"
+
+[directory]
+style = "italic bright-white"
+format = "[$path]($style)[$read_only]($read_only_style) "
+truncation_length = 4
+truncate_to_repo = false
+truncation_symbol = "…/"
+
+[hostname]
+ssh_only = false
+disabled = false
+style = "bold italic white"
+format = "[$hostname]($style)"
+
+
+

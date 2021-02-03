@@ -1,0 +1,67 @@
+{
+	"name": "dark-turquoise",
+	"displayName": "Dark Turquoise",
+	"description": "Deep dark themes for Visual Studio Code",
+	"version": "2.1.1",
+	"publisher": "vhood",
+	"license": "SEE LICENSE IN LICENSE",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vhood/vscode-dark-turquoise"
+	},
+	"scripts": {
+		"build": "node scripts/build.js"
+	},
+	"keywords": [
+		"theme",
+		"dark",
+		"deep dark",
+		"turquoise",
+		"rainbow",
+		"dark turquoise"
+	],
+	"galleryBanner": {
+		"color": "#030705",
+		"theme": "dark"
+	},
+	"engines": {
+		"vscode": "^1.40.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"icon": "media/logo.png",
+	"contributes": {
+		"themes": [
+			{
+				"label": "Dark Turquoise",
+				"uiTheme": "vs-dark",
+				"path": "./themes/dark-turquoise_color-theme.json"
+			},
+			{
+				"label": "Dark Turquoise ~ Night",
+				"uiTheme": "vs-dark",
+				"path": "./themes/dark-turquoise-night_color-theme.json"
+			},
+			{
+				"label": "Dark Turquoise ~ Rainbow",
+				"uiTheme": "vs-dark",
+				"path": "./themes/dark-turquoise-rainbow_color-theme.json"
+			},
+			{
+				"label": "Dark Turquoise ~ Night Rainbow",
+				"uiTheme": "vs-dark",
+				"path": "./themes/dark-turquoise-night-rainbow_color-theme.json"
+			}
+		]
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"del": "^5.1.0"
+	},
+	"__metadata": {
+		"id": "277",
+		"publisherDisplayName": null,
+		"publisherId": "276"
+	}
+}

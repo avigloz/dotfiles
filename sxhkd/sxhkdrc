@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + d
-   rofi -show drun -show-icons
+   j4-dmenu-desktop
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -22,26 +22,26 @@ ctrl + F3
 ctrl +F2
    amixer -q sset Master 2%-
 # brightness
-ctrl + F5
-   xbacklight - 5
-ctrl + F6
-   xbacklight + 5
-ctrl + shift + F5
-   xbacklight = 100
+# ctrl + F5
+   # xbacklight - 5
+# ctrl + F6
+   # xbacklight + 5
+# ctrl + shift + F5
+   # xbacklight = 100
 
 # system
-super + q
+super + shift + q
    i3lock -c 000000
 #
 # bspwm hotkeys
 #
 
 # quit/restart bspwm
-super + alt + {q,r}
+super + shift + {e,r}
 	bspc {quit,wm -r}
 
 # close and kill
-super + {_,shift + }w
+super + {_,shift + }q
 	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout

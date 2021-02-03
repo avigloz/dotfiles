@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/avi/.oh-my-zsh"
-
+export EDITOR="micro"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -11,7 +11,7 @@ ZSH_THEME="mh"
 DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -20,6 +20,9 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # custom aliases
+alias yay="paru"
+alias ed="micro" # some editor
+
 
 # git
 alias gada="git add --all"
@@ -34,11 +37,16 @@ alias goodnight="systemctl suspend"
 alias ls="exa -F --group-directories-first --git --git-ignore" # regular ls
 alias lst="exa -T -F --group-directories-first --git --git-ignore" # show as tree
 alias lsa="exa -F --group-directories-first --git -a" # show all files
-alias scd="systemctl restart --user spotifyd"
-
-# quick ssh
-alias thoth="ssh abg41@thoth.cs.pitt.edu"
+alias spd="systemctl restart --user spotifyd"
 
 # vim
-alias nv="nvim"
 alias vim="nvim"
+
+eval "$(starship init zsh)"
+
+autoload -Uz compinit
+compinit
+# Completion for kitty
+kitty + complete setup zsh | source /dev/stdin
+
+#startx
